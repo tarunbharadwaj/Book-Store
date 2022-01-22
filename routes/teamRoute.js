@@ -11,7 +11,7 @@ router.get('/add-team', teamController.getAddUser);
 // To update a team
 router.get('/update-team', teamController.getUpdateUser);
 
-// APIp
+// API
 router.get('/api/users', teamController.find);
 router.post('/api/users', teamController.create);
 router.put('/api/users/:id', teamController.update);

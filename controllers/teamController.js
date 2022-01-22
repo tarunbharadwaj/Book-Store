@@ -19,7 +19,7 @@ exports.getAddUser = (req, res) => {
 
 exports.getUpdateUser = (req, res) => {
 	axios
-		.get('http://localhost:3900/api/users', {
+		.get('http://localhost:3900/api/users/', {
 			params: { id: req.query.id }
 		})
 		.then(function (userData) {
@@ -106,7 +106,7 @@ exports.update = (req, res) => {
 			}
 		})
 		.catch((err) => {
-			res.status(500).send({ message: err });
+			res.status(500).send({ message: `${err}`});
 		});
 };
 
