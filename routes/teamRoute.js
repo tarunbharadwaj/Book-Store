@@ -1,31 +1,20 @@
-// const { urlencoded } = require('body-parser');
 const express = require('express');
 const router = express.Router();
 const teamController = require('../controllers/teamController');
 
-/**
- * @description Root Routr
- * @method GET /
- */
+// Get all teams
 router.get('/', teamController.getAllTeams);
 
-/**
- * @description Add Team
- * @method GET /add-team
- */
+// To add a team
 router.get('/add-team', teamController.getAddUser);
 
-/**
- * @description for update user
- * @method GET /update-user
- */
+// To update a team
 router.get('/update-team', teamController.getUpdateUser);
 
-/**
- * @description Root Routr
- * @method GET /
- */
+// APIp
+router.get('/api/users', teamController.find);
+router.post('/api/users', teamController.create);
+router.put('/api/users/:id', teamController.update);
+router.delete('/api/users/:id', teamController.delete);
 
 module.exports = router;
-
-
